@@ -1,0 +1,16 @@
+{
+    "eyblog": {
+        "column": {
+            "id": true,
+            "name": true,
+            "content": true,
+            "status": true,
+            "author_name": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

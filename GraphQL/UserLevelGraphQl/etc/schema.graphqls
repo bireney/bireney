@@ -1,0 +1,11 @@
+type Mutation {
+    createCustomer (input: CustomerInput!): CustomerOutput @resolver(class: "\\EY\\UserLevelGraphQl\\Model\\Resolver\\CreateCustomer") @doc(description:"Create customer account")
+}
+
+input CustomerInput {
+    user_level: Int @doc(description: "The customer's userlevel (Junior - 1, Senior - 2)")
+}
+
+type Customer {
+    user_level: String @resolver(class: "EY\\UserLevelGraphQl\\Model\\Resolver\\UserLevel")
+}

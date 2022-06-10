@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="eyblog" resource="default" engine="innodb" comment="Blogs">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="name" nullable="true" length="64"/>
+        <column xsi:type="varchar" name="content" nullable="true" length="64"/>
+        <column xsi:type="int" name="status" nullable="true"/>
+        <column xsi:type="varchar" name="author_name" nullable="true" length="64"/>
+        <column xsi:type="datetime" name="created_at" nullable="false" default="CURRENT_TIMESTAMP"  comment="Created Date"/>
+        <column xsi:type="datetime" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP"  comment="Updated Date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

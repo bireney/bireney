@@ -1,0 +1,11 @@
+type Query {
+    customerOrders: CustomerOrders @resolver(class: "EY\\ERPOrderGraph\\Model\\Resolver\\Orders") @doc(description: "List of customer orders") @cache(cacheable: false)
+}
+
+type CustomerOrder @doc(description: "Order mapping fields") {
+    erp_order_number: String
+}
+
+type CustomerOrders {
+    items: [CustomerOrder] @doc(description: "Array of orders")
+}

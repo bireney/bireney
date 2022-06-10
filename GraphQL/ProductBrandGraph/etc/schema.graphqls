@@ -1,0 +1,3 @@
+interface ProductInterface @typeResolver(class: "Magento\\CatalogGraphQl\\Model\\ProductInterfaceTypeResolverComposite") @doc(description: "The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes.") {
+    brand: String @doc(description: "Brand Name based on manufacturer attribute") @resolver(class: "EY\\ProductBrandGraph\\Model\\Resolver\\Product\\AddBrandAttribute")
+}

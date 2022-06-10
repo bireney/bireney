@@ -1,0 +1,52 @@
+
+type Mutation {
+    createPost(input: EyBlogInput!): EyBlogOutput @resolver(class: "\\EY\\BlogGraphQL\\Model\\Resolver\\CreateEyBlogs") @doc(description: "Create a new ey blog")
+}
+
+type EyBlogOutput {
+    blog: EyBlog!
+}
+
+input EyBlogInput {
+    name: String @doc(description: "Blog name")
+    content: String @doc(description: "Blog Content")
+    status: String @doc(description: "Blog Status")
+    author_name: String @doc(description: "Blog Author")
+    created_at: String @doc(description: "Created time")
+    updated_at: String @doc(description: "Updated time")
+}
+
+type Query {
+    blogs(
+        filter: EyBlogFilterInput @doc(description: "")
+        pageSize: Int = 5 @doc(description: "How many items should show on the page")
+        currentPage: Int = 1 @doc(description: "Allows to using paging it start with 1")
+    ):EyBlogsOutput @resolver(class: "\\EY\\BlogGraphQL\\Model\\Resolver\\Blogs") @doc(description: "Allow to query for a ey blog.")
+}
+
+input EyBlogFilterInput {
+    name: FilterTypeInput  @doc(description: "")
+    content: FilterTypeInput @doc(description: ""),
+    status: FilterTypeInput @doc(description: ""),
+    author_name: FilterTypeInput @doc(description: ""),
+    created_at:FilterTypeInput @doc(description: ""),
+    updated_at: FilterTypeInput @doc(description: ""),
+    or: EyBlogFilterInput
+}
+
+type EyBlogsOutput {
+    total_count:  Int @doc(description: "")
+    posts: [EyBlog] @doc(description: "")
+}
+
+type EyBlog {
+    id: Int @doc(description: ""),
+    name: String @doc(description: ""),
+    content: String @doc(description: ""),
+    status: String @doc(description: ""),
+    author_name: String @doc(description: ""),
+    created_at: String @doc(description: ""),
+    updated_at: String @doc(description: ""),
+}
+
+

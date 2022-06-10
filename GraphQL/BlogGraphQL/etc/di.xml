@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="EY\BlogGraphQL\Api\Data\BlogInterface" type="EY\BlogGraphQL\Model\Blog"/>
+    <preference for="EY\BlogGraphQL\Api\BlogRepositoryInterface" type="\EY\BlogGraphQL\Model\BlogRepository"/>
+    <type name="Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntityAttributesPool">
+        <arguments>
+            <argument name="attributesInstances" xsi:type="array">
+                <item name="eyblog" xsi:type="object">EY\BlogGraphQL\Model\Resolver\FilterArgument</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
