@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+  /**
+  *  @author  Biren Patel <Biren.Mahendrabhai.Patel@gds.ey.com>
+  *  @package Marmon OrderMQ
+  */
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
+    <publisher topic="mq.magento.order.place">
+        <connection name="db" exchange="mq.magento.order.place" />
+    </publisher>
+</config>
